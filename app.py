@@ -1,7 +1,11 @@
 # app.py
 from flask import Flask, request, jsonify
 
+import ctalapi
+
 app = Flask(__name__)
+
+app.register_blueprint(ctalapi.cta_l_api)
 
 countries = [
     {"id": 1, "name": "Thailand", "capital": "Bangkok", "area": 513120},
