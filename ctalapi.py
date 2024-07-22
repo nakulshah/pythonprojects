@@ -1,9 +1,13 @@
 # ctalapi.py
 
-from flask import Blueprint, jsonify
+from flask import Blueprint
+
+from models.ctal import CTAL
 
 cta_l_api = Blueprint('cta_l_api', __name__)
+ctal = CTAL()
+
 
 @cta_l_api.get("/ctalrides")
 def get_countries():
-    return jsonify({"stationname": "Addison/Clark", "riders": 51})
+    return ctal.getdata().to_json()
