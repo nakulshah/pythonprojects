@@ -1,7 +1,7 @@
 import datetime
 
 from flask import jsonify
-from pandas import read_csv
+from pandas import read_csv, to_datetime
 
 
 class CTAL:
@@ -13,7 +13,8 @@ class CTAL:
         print('initializing CTA L data')
         # self.df_ctalrides = read_csv('../raw_data/CTA_-_Ridership_-__L__Station_Entries_-_Daily_Totals_20240721.csv')
         self.df_ctalrides = read_csv('raw_data/CTA_-_Ridership_-__L__Station_Entries_-_Daily_Totals_20240721.csv')
-
+        self.df_ctalrides['date'] = to_datetime(self.df_ctalrides['date'], format="%m/%d/%Y")
+        self.df_ctalrides['date'] = self.df_ctalrides['date'].dt.date
         self.df_ctalrides = self.df_ctalrides.reset_index()  # make sure indexes pair with number of rows
 
         for index, row in self.df_ctalrides.iterrows():
