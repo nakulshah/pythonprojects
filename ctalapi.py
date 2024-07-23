@@ -9,5 +9,7 @@ ctal = CTAL()
 
 
 @cta_l_api.get("/ctalrides")
-def get_countries():
-    return jsonify(ctal.getdata())
+def get_ctalrides():
+    response = jsonify(ctal.getdata())
+    response.headers.add('Access-Control-Allow-Origin', '*')
+    return response

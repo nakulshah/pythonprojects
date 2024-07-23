@@ -1,19 +1,7 @@
 new gridjs.Grid({
-  columns: ["date", "day_type", "rides", "station_id", "station_name"],
-  data: [
- {
-    "date": "01/01/2024",
-    "day_type": "U",
-    "rides": 299,
-    "station_id": 40010,
-    "station_name": "Austin-Forest Park"
-  },
-  {
-    "date": "01/02/2024",
-    "day_type": "W",
-    "rides": 451,
-    "station_id": 40010,
-    "station_name": "Austin-Forest Park"
+  columns: ["date", "station_name", "day_type", "rides"],
+  server: {
+    url: 'http://127.0.0.1:5000/ctalrides',
+    then: data => data
   }
-  ]
 }).render(document.getElementById("wrapper"));
