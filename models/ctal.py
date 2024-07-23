@@ -14,7 +14,7 @@ class CTAL:
         # self.df_ctalrides = read_csv('../raw_data/CTA_-_Ridership_-__L__Station_Entries_-_Daily_Totals_20240721.csv')
         self.df_ctalrides = read_csv('raw_data/CTA_-_Ridership_-__L__Station_Entries_-_Daily_Totals_20240721.csv')
 
-        self.df_ctalrides.reset_index()  # make sure indexes pair with number of rows
+        self.df_ctalrides = self.df_ctalrides.reset_index()  # make sure indexes pair with number of rows
 
         for index, row in self.df_ctalrides.iterrows():
             ctalride = CTALride()
