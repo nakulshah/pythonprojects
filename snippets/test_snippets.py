@@ -1,10 +1,15 @@
 import unittest
 import hamming_weight as hw
 import multiples_3_5 as mul
+import my_random as my_rand
 from snippets.spiral_matrix import Solution
 
 
 class MyTestCase(unittest.TestCase):
+
+    def test_random(self):
+        rand = my_rand.my_random()
+        print(rand.generate_random(893))
 
     def test_something(self):
         self.assertEqual(True, False)  # add assertion here
