@@ -2,10 +2,24 @@ import unittest
 import hamming_weight as hw
 import multiples_3_5 as mul
 import my_random as my_rand
+from snippets.bouncy_numbers import bouncy_numbers
 from snippets.spiral_matrix import Solution
 
 
 class MyTestCase(unittest.TestCase):
+
+    def test_bouncy(self):
+        bouncy = bouncy_numbers()
+        print(bouncy.is_bouncy(1))
+        print(bouncy.is_bouncy(123))
+        print(bouncy.is_bouncy(321))
+        print(bouncy.is_bouncy(7987))
+
+    def test_count_bouncy_below(self):
+        bouncy = bouncy_numbers()
+        print(bouncy.count_bouncy_numbers_below(10))
+        print(bouncy.count_bouncy_numbers_below(20))
+        print(bouncy.count_bouncy_numbers_below(1000000))
 
     def test_random(self):
         rand = my_rand.my_random()
