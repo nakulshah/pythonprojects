@@ -2,7 +2,9 @@ import unittest
 import hamming_weight as hw
 import multiples_3_5 as mul
 import my_random as my_rand
+from snippets.add_bdate_numbers import BirthDateAddition
 from snippets.bouncy_numbers import bouncy_numbers
+from snippets.printsomething import Calculator
 from snippets.spiral_matrix import Solution
 
 
@@ -60,6 +62,32 @@ class MyTestCase(unittest.TestCase):
         sum = m.find_3_5_sum(1000)
         print(sum)
         self.assertEqual(233168, sum)
+
+    def test_calculator(self):
+        calc = Calculator()
+        print(calc.calculate(1, 2, '+'))
+
+    def test_birthdate(self):
+        birthdateadd = BirthDateAddition()
+        birthdate = '08/07/1984'
+        addition = birthdateadd.addBirthDateNumbers(birthdate)
+        print(birthdate + ' addition is ' + str(addition))
+        self.assertEqual(1999, addition, '')
+
+        birthdate = '01/29/1985'
+        addition = birthdateadd.addBirthDateNumbers(birthdate)
+        print(birthdate + ' addition is ' + str(addition))
+        self.assertEqual(2015, addition, '')
+
+        birthdate = '03/06/2014'
+        addition = birthdateadd.addBirthDateNumbers(birthdate)
+        print(birthdate + ' addition is ' + str(addition))
+        self.assertEqual(2023, addition, '')
+
+        birthdate = '01/01/2000'
+        addition = birthdateadd.addBirthDateNumbers(birthdate)
+        print(birthdate + ' addition is ' + str(addition))
+        self.assertNotEqual(2023, addition, '')
 
 
 
