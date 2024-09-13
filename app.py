@@ -2,10 +2,12 @@
 from flask import Flask, request, jsonify
 
 import ctalapi
+import snippetsapi
 
 app = Flask(__name__)
 
 app.register_blueprint(ctalapi.cta_l_api)
+app.register_blueprint(snippetsapi.snippets)
 
 countries = [
     {"id": 1, "name": "Thailand", "capital": "Bangkok", "area": 513120},

@@ -70,24 +70,24 @@ class MyTestCase(unittest.TestCase):
     def test_birthdate(self):
         birthdateadd = BirthDateAddition()
         birthdate = '08/07/1984'
-        addition = birthdateadd.addBirthDateNumbers(birthdate)
-        print(birthdate + ' addition is ' + str(addition))
-        self.assertEqual(1999, addition, '')
+        output = birthdateadd.addBirthDateNumbers(birthdate)
+        print(birthdate + ' output is ' + str(output.addition))
+        self.assertEqual(1999, output.addition, '')
 
         birthdate = '01/29/1985'
-        addition = birthdateadd.addBirthDateNumbers(birthdate)
-        print(birthdate + ' addition is ' + str(addition))
-        self.assertEqual(2015, addition, '')
+        output = birthdateadd.addBirthDateNumbers(birthdate)
+        print(birthdate + ' output is ' + str(output.addition))
+        self.assertEqual(2015, output.addition, '')
 
         birthdate = '03/06/2014'
-        addition = birthdateadd.addBirthDateNumbers(birthdate)
-        print(birthdate + ' addition is ' + str(addition))
-        self.assertEqual(2023, addition, '')
+        output = birthdateadd.addBirthDateNumbers(birthdate)
+        print(birthdate + ' output is ' + str(output.addition))
+        self.assertEqual(2023, output.addition, '')
 
         birthdate = '01/01/2000'
-        addition = birthdateadd.addBirthDateNumbers(birthdate)
-        print(birthdate + ' addition is ' + str(addition))
-        self.assertNotEqual(2023, addition, '')
+        output = birthdateadd.addBirthDateNumbers(birthdate)
+        print(birthdate + ' output is ' + str(output.addition))
+        self.assertNotEqual(2023, output.addition, '')
 
 
 
