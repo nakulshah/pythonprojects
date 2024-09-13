@@ -1,4 +1,4 @@
-from flask import Blueprint, jsonify, json
+from flask import Blueprint, jsonify, request
 
 from snippets.add_bdate_numbers import BirthDateAddition
 
@@ -13,6 +13,7 @@ def helloworld():
 @snippets.get('/snippets/birthdateadd')
 def birthdateadd():
     addBirthdateNumber = BirthDateAddition()
-    response = jsonify(addBirthdateNumber.addBirthDateNumbers('08/07/1984').serialize())
+    birthdate = request.args.get('birthdate')
+    response = jsonify(addBirthdateNumber.addBirthDateNumbers(birthdate).serialize())
     response.headers.add('Access-Control-Allow-Origin', '*')
     return response
