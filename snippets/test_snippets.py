@@ -5,6 +5,7 @@ import my_random as my_rand
 from snippets.add_bdate_numbers import BirthDateAddition
 from snippets.bouncy_numbers import bouncy_numbers
 from snippets.printsomething import Calculator
+from snippets.reverse import Reverse
 from snippets.spiral_matrix import Solution
 
 
@@ -88,6 +89,13 @@ class MyTestCase(unittest.TestCase):
         output = birthdateadd.addBirthDateNumbers(birthdate)
         print(birthdate + ' output is ' + str(output.addition))
         self.assertNotEqual(2023, output.addition, '')
+
+    def test_reverse(self):
+        reverse = Reverse()
+        self.assertEqual('olleh', reverse.rev('hello'), '')
+        self.assertEqual('321', reverse.rev(123), '')
+
+
 
 
 
