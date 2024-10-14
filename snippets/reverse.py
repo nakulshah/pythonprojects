@@ -14,6 +14,7 @@ class Reverse():
             return self.rev_loc(input, loc+1) + input[loc]
 
     def serialize(self):
+        # test comment
         return ({'string': str(self.ip),
                 'reverse': str(self.op)})
 
