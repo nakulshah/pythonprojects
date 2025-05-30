@@ -27,3 +27,10 @@ def reverse(to_reverse):
     rev = Reverse()
     rev.rev(to_reverse)
     return jsonify(rev.serialize())
+
+@snippets.get('/snippets/concatenate/<first>/<second>')
+def concatenate(first, second):
+    result = first + second
+    response = jsonify(result)
+    response.headers.add('Access-Control-Allow-Origin', '*')
+    return response

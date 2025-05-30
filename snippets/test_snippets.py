@@ -7,6 +7,7 @@ from snippets.bouncy_numbers import bouncy_numbers
 from snippets.printsomething import Calculator
 from snippets.reverse import Reverse
 from snippets.spiral_matrix import Solution
+from snippets.testFunction import testFunction
 
 
 class MyTestCase(unittest.TestCase):
@@ -95,6 +96,11 @@ class MyTestCase(unittest.TestCase):
         self.assertEqual('olleh', reverse.rev('hello'), '')
         self.assertEqual('321', reverse.rev(123), '')
 
+    def test_test_function(self):
+        # create an instance of the class
+        test_function = testFunction()
+        test_function.hello_test_function()
+        self.assertEqual(True, True)
 
 
 
