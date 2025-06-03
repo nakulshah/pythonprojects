@@ -34,3 +34,11 @@ def concatenate(first, second):
     response = jsonify(result)
     response.headers.add('Access-Control-Allow-Origin', '*')
     return response
+
+# write a function to add two decimal numbers
+@snippets.get('/snippets/add/<float:first>/<float:second>')
+def add(first, second):
+    result = first + second
+    response = jsonify(result)
+    response.headers.add('Access-Control-Allow-Origin', '*')
+    return response

@@ -1,13 +1,15 @@
 # app.py
-from flask import Flask, request, jsonify
-
+from flask import request, jsonify
 import ctalapi
 import snippetsapi
+from shops import create_app
 
-app = Flask(__name__)
+app = create_app()  # This creates the Flask app and registers the shop blueprint
 
+# Register other blueprints
 app.register_blueprint(ctalapi.cta_l_api)
 app.register_blueprint(snippetsapi.snippets)
+
 
 countries = [
     {"id": 1, "name": "Thailand", "capital": "Bangkok", "area": 513120},
