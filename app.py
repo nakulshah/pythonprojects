@@ -2,7 +2,7 @@
 from flask import request, jsonify
 import ctalapi
 import snippetsapi
-from shops import create_app
+from shopsapi import create_app
 
 app = create_app()  # This creates the Flask app and registers the shop blueprint
 

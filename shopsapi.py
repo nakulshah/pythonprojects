@@ -1,4 +1,4 @@
-# snippets/shops.py
+# snippets/shopsapi.py
 from flask import Blueprint, request, jsonify, Flask
 from flask_sqlalchemy import SQLAlchemy
 
