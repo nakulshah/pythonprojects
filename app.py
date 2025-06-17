@@ -2,6 +2,7 @@
 from flask import request, jsonify
 import ctalapi
 import snippetsapi
+from mathapi import mathapi
 from shopsapi import create_app
 
 app = create_app()  # This creates the Flask app and registers the shop blueprint
@@ -9,6 +10,7 @@ app = create_app()  # This creates the Flask app and registers the shop blueprin
 # Register other blueprints
 app.register_blueprint(ctalapi.cta_l_api)
 app.register_blueprint(snippetsapi.snippets)
+app.register_blueprint(mathapi)
 
 
 countries = [
